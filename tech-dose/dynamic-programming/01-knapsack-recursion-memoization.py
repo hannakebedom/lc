@@ -1,6 +1,6 @@
 '''
 01 knapsack recursive solution with memoization
-runtime: O(n * w), where n is the number of items and w is the capacity of the knapsack
+runtime: O(n * capacity)
 
 weight (array) - the weight of an item i is located at weight[i]
 profit (array) - the profit gained from item i is located at profit[i]
@@ -9,7 +9,7 @@ n (int) - the number of items to choose from
 '''
 
 def zero_one_knapsack(weight, profit, capacity, n):
-	mem = [[-1] * n for i in range(capacity + 1)]
+	mem = [[-1] * (n + 1) for i in range(capacity + 1)]
 	
 	def helper(capacity, n):
 		result = -1
